@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ChapterEnd = ({ color, nextChapter, nextChapterLabel, previousChapter, isSun }) => {
+const ChapterEnd = ({ color, nextChapter, nextChapterLabel, nextChapterSubtitle, previousChapter, isSun }) => {
   return (
     <div className="w-full py-32 flex flex-col items-center justify-center text-center border-t border-outline-variant/10 relative overflow-hidden mt-32">
       <div 
@@ -24,13 +24,20 @@ const ChapterEnd = ({ color, nextChapter, nextChapterLabel, previousChapter, isS
         )}
 
         {nextChapter ? (
-          <Link 
-            to={`/chapter/${nextChapter}`}
-            className="px-8 py-4 rounded-full border border-tertiary-fixed/30 bg-tertiary-fixed/10 hover:bg-tertiary-fixed/20 backdrop-blur-md transition-all font-label-caps tracking-[0.2em] text-[12px] md:text-[14px] uppercase group shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]"
-            style={{ borderColor: `${color}50`, backgroundColor: `${color}15` }}
-          >
-            {nextChapterLabel || "CONTINUE THE JOURNEY"} &rarr;
-          </Link>
+          <div className="flex flex-col items-center gap-4">
+            <Link 
+              to={`/chapter/${nextChapter}`}
+              className="px-8 py-4 rounded-full border border-tertiary-fixed/30 bg-tertiary-fixed/10 hover:bg-tertiary-fixed/20 backdrop-blur-md transition-all font-label-caps tracking-[0.2em] text-[12px] md:text-[14px] uppercase group shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+              style={{ borderColor: `${color}50`, backgroundColor: `${color}15` }}
+            >
+              {nextChapterLabel || "CONTINUE THE JOURNEY"} &rarr;
+            </Link>
+            {nextChapterSubtitle && (
+              <span className="font-label-mono text-[10px] md:text-[12px] text-on-surface/50 tracking-[0.3em] uppercase mt-2 whitespace-pre-line text-center">
+                {nextChapterSubtitle}
+              </span>
+            )}
+          </div>
         ) : (
           <Link 
             to="/universe"

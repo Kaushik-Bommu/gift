@@ -200,6 +200,7 @@ const Chapter = () => {
         color={planet.color}
         nextChapter={planet.nextChapter}
         nextChapterLabel={planet.nextChapterLabel}
+        nextChapterSubtitle={planet.nextChapterSubtitle}
         previousChapter={planet.previousChapter}
         isSun={isSun}
       />
