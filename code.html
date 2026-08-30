@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Celestial Journey - Solar System Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#353434",
+                        "outline": "#8e9192",
+                        "primary": "#ffffff",
+                        "inverse-surface": "#e5e2e1",
+                        "primary-container": "#e2e2e2",
+                        "on-primary": "#2f3131",
+                        "surface-dim": "#141313",
+                        "on-secondary-fixed-variant": "#004e60",
+                        "tertiary-fixed-dim": "#e9c400",
+                        "on-secondary-container": "#00566a",
+                        "on-primary-container": "#636565",
+                        "secondary-container": "#00d2ff",
+                        "on-surface": "#e5e2e1",
+                        "outline-variant": "#444748",
+                        "on-surface-variant": "#c4c7c8",
+                        "on-tertiary": "#3a3000",
+                        "background": "#141313",
+                        "surface-container-high": "#2a2a2a",
+                        "inverse-primary": "#5d5f5f",
+                        "surface-variant": "#353434",
+                        "inverse-on-surface": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "on-primary-fixed": "#1a1c1c",
+                        "on-background": "#e5e2e1",
+                        "surface": "#141313",
+                        "surface-container-low": "#1c1b1b",
+                        "primary-fixed": "#e2e2e2",
+                        "primary-fixed-dim": "#c6c6c7",
+                        "surface-container-lowest": "#0e0e0e",
+                        "tertiary-fixed": "#ffe16d",
+                        "on-tertiary-fixed-variant": "#544600",
+                        "tertiary-container": "#ffe16d",
+                        "error-container": "#93000a",
+                        "on-tertiary-fixed": "#221b00",
+                        "surface-container": "#201f1f",
+                        "on-secondary-fixed": "#001f28",
+                        "surface-tint": "#c6c6c7",
+                        "on-tertiary-container": "#776300",
+                        "tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#47d6ff",
+                        "error": "#ffb4ab",
+                        "on-secondary": "#003543",
+                        "on-error": "#690005",
+                        "secondary": "#a5e7ff",
+                        "surface-bright": "#3a3939",
+                        "secondary-fixed": "#b6ebff",
+                        "on-primary-fixed-variant": "#454747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "element-gap": "4rem",
+                        "chapter-padding": "20vh",
+                        "orbit-margin": "8vw",
+                        "star-gutter": "2rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "label-mono": ["Inter"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "display-hero": ["Playfair Display"],
+                        "body-romantic": ["Playfair Display"],
+                        "body-main": ["Inter"],
+                        "label-caps": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", { "lineHeight": "120%", "letterSpacing": "0.05em", "fontWeight": "400" }],
+                        "label-mono": ["10px", { "lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["32px", { "lineHeight": "120%", "fontWeight": "400" }],
+                        "display-hero": ["84px", { "lineHeight": "100%", "letterSpacing": "0.1em", "fontWeight": "400" }],
+                        "body-romantic": ["24px", { "lineHeight": "160%", "fontWeight": "400" }],
+                        "body-main": ["16px", { "lineHeight": "180%", "letterSpacing": "0.02em", "fontWeight": "300" }],
+                        "label-caps": ["12px", { "lineHeight": "100%", "letterSpacing": "0.3em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glow-sm { text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+        .ambient-glow {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 150vw;
+            height: 150vh;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, rgba(20,19,19,0) 70%);
+            pointer-events: none;
+            z-index: 1;
+        }
+        .reveal-text {
+            opacity: 0;
+            transform: translateY(20px);
+            filter: blur(10px);
+            transition: all 1.5s ease-out;
+        }
+        .reveal-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+            filter: blur(0);
+        }
+        .pulse-subtle {
+            animation: pulse-glow 4s infinite alternate;
+        }
+        @keyframes pulse-glow {
+            0% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen overflow-hidden font-body-main selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- Persistent Background -->
+<div class="fixed inset-0 z-0">
+        {{DATA:SCREEN:SCREEN_6}}
+    </div>
+<!-- Ambient Atmospheric Glow -->
+<div class="ambient-glow"></div>
+<!-- 3D Solar System Animation -->
+<!-- STITCH_THREEJS_START:ANIMATION_7 class="absolute inset-0 w-full h-full z-10" -->
+<div class="absolute inset-0 w-full h-full z-10" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_7" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_7');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 2000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(window.devicePixelRatio);
+container.appendChild(renderer.domElement);
+
+const ambientLight = new THREE.AmbientLight(0x404040, 2);
+scene.add(ambientLight);
+
+const sunLight = new THREE.PointLight(0xffffff, 3, 1000);
+sunLight.position.set(0, 0, 0);
+scene.add(sunLight);
+
+const planets = [];
+const planetData = [
+  { name: 'Neptune', color: 0x4b70dd, size: 0.8, distance: 45, speed: 0.001, label: '01' },
+  { name: 'Uranus', color: 0x8ed7d7, size: 0.8, distance: 38, speed: 0.0015, label: '02' },
+  { name: 'Saturn', color: 0xe6dbad, size: 1.2, distance: 30, speed: 0.002, label: '03', hasRings: true },
+  { name: 'Jupiter', color: 0xe3bb76, size: 2.0, distance: 22, speed: 0.0012, label: '04' },
+  { name: 'Mars', color: 0xff4d00, size: 0.5, distance: 16, speed: 0.003, label: '05' },
+  { name: 'Earth', color: 0x2233ff, size: 0.7, distance: 13, speed: 0.004, label: '06' },
+  { name: 'Venus', color: 0xffcc33, size: 0.6, distance: 10, speed: 0.005, label: '07' },
+  { name: 'Mercury', color: 0x999999, size: 0.4, distance: 7, speed: 0.006, label: '08' },
+  { name: 'Sun', color: 0xffcc00, size: 4.5, distance: 0, speed: 0, label: '09', isSun: true }
+];
+
+planetData.forEach((data) => {
+  const group = new THREE.Group();
+  
+  // Planet Sphere
+  const geometry = new THREE.SphereGeometry(data.size, 32, 32);
+  let material;
+  if (data.isSun) {
+    material = new THREE.MeshBasicMaterial({ color: data.color });
+    // Sun Glow
+    const glowGeom = new THREE.SphereGeometry(data.size * 1.2, 32, 32);
+    const glowMat = new THREE.MeshBasicMaterial({ color: data.color, transparent: true, opacity: 0.3 });
+    const glow = new THREE.Mesh(glowGeom, glowMat);
+    group.add(glow);
+  } else {
+    material = new THREE.MeshPhongMaterial({ 
+      color: data.color, 
+      shininess: 10,
+      emissive: data.color,
+      emissiveIntensity: 0.1
+    });
+  }
+  
+  const mesh = new THREE.Mesh(geometry, material);
+  mesh.userData = { name: data.name, label: data.label };
+  group.add(mesh);
+
+  // Rings for Saturn
+  if (data.hasRings) {
+    const ringGeo = new THREE.TorusGeometry(data.size * 1.8, 0.05, 2, 100);
+    const ringMat = new THREE.MeshBasicMaterial({ color: 0x888888, transparent: true, opacity: 0.5, side: THREE.DoubleSide });
+    const ring = new THREE.Mesh(ringGeo, ringMat);
+    ring.rotation.x = Math.PI / 2;
+    group.add(ring);
+  }
+
+  // Orbit Line
+  if (data.distance > 0) {
+    const orbitGeo = new THREE.RingGeometry(data.distance - 0.05, data.distance + 0.05, 64);
+    const orbitMat = new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.1, side: THREE.DoubleSide });
+    const orbit = new THREE.Mesh(orbitGeo, orbitMat);
+    orbit.rotation.x = Math.PI / 2;
+    scene.add(orbit);
+  }
+
+  group.userData = { 
+    distance: data.distance, 
+    speed: data.speed, 
+    angle: Math.random() * Math.PI * 2,
+    name: data.name
+  };
+  
+  planets.push(group);
+  scene.add(group);
+});
+
+camera.position.set(0, 40, 60);
+camera.lookAt(0, 0, 0);
+
+// Interaction
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
+
+window.addEventListener('click', (event) => {
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+  raycaster.setFromCamera(mouse, camera);
+  const intersects = raycaster.intersectObjects(scene.children, true);
+
+  if (intersects.length > 0) {
+    let object = intersects[0].object;
+    while (object.parent && !object.userData.name) {
+      object = object.parent;
+    }
+    if (object.userData.name) {
+      window.parent.postMessage({ type: 'PLANET_CLICK', name: object.userData.name }, '*');
+    }
+  }
+});
+
+function animate() {
+  requestAnimationFrame(animate);
+  
+  planets.forEach(p => {
+    if (p.userData.distance > 0) {
+      p.userData.angle += p.userData.speed;
+      p.position.x = Math.cos(p.userData.angle) * p.userData.distance;
+      p.position.z = Math.sin(p.userData.angle) * p.userData.distance;
+    }
+    // Subtle self-rotation
+    p.children[0].rotation.y += 0.01;
+  });
+
+  renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+  const w = container.clientWidth || window.innerWidth;
+  const h = container.clientHeight || window.innerHeight;
+  camera.aspect = w / h;
+  camera.updateProjectionMatrix();
+  renderer.setSize(w, h);
+});
+
+animate();
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_7 -->
+<!-- Top Navigation Anchor (Shared Component) -->
+<header class="fixed top-0 w-full flex justify-between items-center px-orbit-margin py-6 z-50 backdrop-blur-sm bg-transparent transition-opacity duration-500 ease-out">
+<div class="font-headline-lg text-headline-lg tracking-widest text-primary">Aethelgard</div>
+<nav class="hidden md:flex gap-element-gap">
+<a class="font-body-main text-body-main text-on-surface-variant font-light hover:text-primary hover:glow-sm transition-all" href="#">Our Story</a>
+<a class="font-body-main text-body-main text-on-surface-variant font-light hover:text-primary hover:glow-sm transition-all" href="#">Gallery</a>
+<a class="font-body-main text-body-main text-primary font-bold border-b border-primary pb-1 hover:text-primary hover:glow-sm transition-all" href="#">Star Map</a>
+</nav>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-colors cursor-pointer" data-icon="settings">settings</span>
+</div>
+</header>
+<!-- Central UI Overlay -->
+<main class="relative z-20 flex flex-col items-center justify-center h-screen pointer-events-none">
+<div class="text-center mt-[-10vh] reveal-text">
+<h1 class="font-display-hero text-display-hero text-primary mb-4 glow-sm">Celestial Journey</h1>
+<p class="font-body-romantic text-body-romantic text-on-surface-variant max-w-2xl mx-auto pulse-subtle">
+                Select a Planet to Travel Through Time
+            </p>
+</div>
+</main>
+<!-- Side Navigation Shell (Shared Component) -->
+<nav class="fixed right-orbit-margin z-50 flex flex-col items-center space-y-8 fixed right-0 top-1/2 -translate-y-1/2 h-auto cursor-pointer flex flex-col items-center gap-element-gap">
+<div class="font-label-caps text-label-caps text-on-surface-variant opacity-60 mb-4 transform -rotate-90 origin-right translate-x-4 whitespace-nowrap">Chronicles</div>
+<div class="flex flex-col gap-8">
+<!-- Active Tab -->
+<div class="group relative flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary-fixed-dim scale-125 transition-transform duration-300 drop-shadow-[0_0_8px_rgba(233,196,0,0.8)]" data-icon="radio_button_checked" style="font-variation-settings: 'FILL' 1;">radio_button_checked</span>
+<span class="absolute right-12 opacity-0 group-hover:opacity-100 transition-opacity font-label-mono text-label-mono text-tertiary-fixed whitespace-nowrap">The Spark</span>
+</div>
+<!-- Inactive Tabs -->
+<div class="group relative flex items-center justify-center">
+<span class="material-symbols-outlined text-outline opacity-40 scale-100 hover:opacity-100 hover:scale-110 transition-all text-tertiary-fixed" data-icon="language">language</span>
+<span class="absolute right-12 opacity-0 group-hover:opacity-100 transition-opacity font-label-mono text-label-mono text-on-surface-variant whitespace-nowrap">Orbit</span>
+</div>
+<div class="group relative flex items-center justify-center">
+<span class="material-symbols-outlined text-outline opacity-40 scale-100 hover:opacity-100 hover:scale-110 transition-all text-tertiary-fixed" data-icon="nights_stay">nights_stay</span>
+<span class="absolute right-12 opacity-0 group-hover:opacity-100 transition-opacity font-label-mono text-label-mono text-on-surface-variant whitespace-nowrap">Eclipse</span>
+</div>
+<div class="group relative flex items-center justify-center">
+<span class="material-symbols-outlined text-outline opacity-40 scale-100 hover:opacity-100 hover:scale-110 transition-all text-tertiary-fixed" data-icon="auto_awesome">auto_awesome</span>
+<span class="absolute right-12 opacity-0 group-hover:opacity-100 transition-opacity font-label-mono text-label-mono text-on-surface-variant whitespace-nowrap">Constellation</span>
+</div>
+<div class="group relative flex items-center justify-center">
+<span class="material-symbols-outlined text-outline opacity-40 scale-100 hover:opacity-100 hover:scale-110 transition-all text-tertiary-fixed" data-icon="all_inclusive">all_inclusive</span>
+<span class="absolute right-12 opacity-0 group-hover:opacity-100 transition-opacity font-label-mono text-label-mono text-on-surface-variant whitespace-nowrap">Infinity</span>
+</div>
+</div>
+</nav>
+<!-- Footer Anchor (Shared Component) -->
+<footer class="fixed bottom-0 w-full flex justify-between items-end px-orbit-margin pb-8 z-40 bg-transparent opacity-60 hover:opacity-100 duration-700">
+<div class="font-label-caps text-label-caps text-on-surface-variant">Eternalized in the Stars © 2024</div>
+<div class="text-center absolute left-1/2 -translate-x-1/2 pb-4">
+<p class="font-label-mono text-label-mono text-outline animate-pulse">Click a celestial body to begin that chapter</p>
+</div>
+<nav class="flex gap-6 font-label-mono text-label-mono">
+<a class="text-outline hover:text-on-surface transition-colors" href="#">Privacy</a>
+<a class="text-outline hover:text-on-surface transition-colors" href="#">Terms</a>
+<a class="text-outline hover:text-on-surface transition-colors" href="#">Log Archive</a>
+</nav>
+</footer>
+<script>
+        // Cinematic Text Reveal
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const revealElements = document.querySelectorAll('.reveal-text');
+                revealElements.forEach(el => el.classList.add('visible'));
+            }, 500);
+            
+            // Interaction hint for 3D elements
+            console.log("3D scene loaded. Awaiting celestial interaction.");
+        });
+    </script>
+</body></html>
