@@ -141,7 +141,7 @@ const Planet = ({ data }) => {
         <Html position={[0, -(data.size + 1.0), 0]} center zIndexRange={[100, 0]}>
           <div className="flex flex-col items-center pointer-events-none transform translate-y-1/2 pt-6 relative">
             {/* The vertical line connecting to the planet */}
-            <div className="absolute top-0 w-[1px] h-6 bg-primary/40" style={{ boxShadow: `0 0 8px ${data.color}` }} />
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 24, opacity: 1 }} transition={{ duration: 0.5 }} className="absolute top-0 w-[1px] bg-primary/40" style={{ boxShadow: `0 0 8px ${data.color}` }} />
             
             <motion.div 
                initial={{ opacity: 0, y: -10 }}

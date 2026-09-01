@@ -1,5 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import HeartbeatEffect from '../components/chapter/HeartbeatEffect';
+import { CinematicText, EmotionalText, MilestoneText } from '../components/animations';
 
 export const storyConfig = {
   girlfriendName: "[HER NAME]",
@@ -40,7 +42,7 @@ export const storyConfig = {
               <br /><br />
               Back then, everyone used to call you...
               <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} transition={{duration:1}} className="my-16">
-                <span className="font-display-hero text-[48px] md:text-[80px] text-tertiary-fixed drop-shadow-lg block">Aasta Paasta</span>
+                <span className="font-display-hero text-[48px] md:text-[80px] text-tertiary-fixed drop-shadow-lg block"><EmotionalText color="#4b70dd">Aasta Paasta</EmotionalText></span>
               </motion.div>
               Not gonna lie, that's how I remembered you during my school days.
               <br /><br />
@@ -99,7 +101,7 @@ export const storyConfig = {
                 transition={{type: "spring", bounce: 0.5, delay: 0.5}}
                 className="my-16"
               >
-                <span className="font-display-hero text-[48px] md:text-[72px] text-tertiary-fixed drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">INSAAAAANELY HILARIOUS.</span>
+                <span className="font-display-hero text-[48px] md:text-[72px] text-tertiary-fixed drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]"><EmotionalText color="#4b70dd">INSAAAAANELY HILARIOUS.</EmotionalText></span>
               </motion.div>
             </>
           ) 
@@ -351,7 +353,7 @@ export const storyConfig = {
               </motion.span>
               
               <motion.span initial={{opacity:0, scale: 1.05}} whileInView={{opacity:1, scale: 1}} transition={{delay: 5, duration: 1.5}} className="block mb-8 text-primary font-headline-lg-mobile text-[28px]">
-                ...popped out of nowhere.
+                <EmotionalText color="#8ed7d7">...popped out of nowhere.</EmotionalText>
               </motion.span>
               
               <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 6.5, duration: 1.5}} className="block">
@@ -918,7 +920,7 @@ export const storyConfig = {
               </motion.span>
               
               <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} transition={{delay: 8, duration: 2}} className="my-16 flex justify-center">
-                <span className="font-display-hero text-[40px] md:text-[64px] text-[#d4af37] drop-shadow-[0_0_25px_rgba(212,175,55,0.7)] text-center">THE GUIDE OF MY TEAM.</span>
+                <span className="font-display-hero text-[40px] md:text-[64px] text-[#d4af37] drop-shadow-[0_0_25px_rgba(212,175,55,0.7)] text-center"><MilestoneText color="#d4af37">THE GUIDE OF MY TEAM.</MilestoneText></span>
               </motion.div>
             </div>
           ) 
@@ -978,7 +980,7 @@ export const storyConfig = {
               </motion.span>
               
               <motion.div initial={{opacity:0, scale:0.9}} whileInView={{opacity:1, scale:1}} transition={{delay: 10, duration: 3}} className="text-center">
-                <span className="font-display-hero text-[64px] md:text-[100px] text-primary drop-shadow-[0_0_30px_rgba(212,175,55,0.8)]">AND HUGGED ME.</span>
+                <span className="font-display-hero text-[64px] md:text-[100px] text-primary drop-shadow-[0_0_30px_rgba(212,175,55,0.8)]"><MilestoneText color="#d4af37">AND HUGGED ME.</MilestoneText></span>
               </motion.div>
             </div>
           ) 
@@ -1242,7 +1244,7 @@ export const storyConfig = {
               
               <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{delay: 12, duration: 3}} className="my-24">
                 <span className="font-display-hero text-[64px] md:text-[100px] text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.6)] block leading-tight">
-                  "Are we dating?"
+                  <MilestoneText color="#d4af37">"Are we dating?"</MilestoneText>
                 </span>
               </motion.div>
               
@@ -1250,7 +1252,7 @@ export const storyConfig = {
               
               <motion.div initial={{opacity:0, scale:0.8}} whileInView={{opacity:1, scale:1}} transition={{delay: 21, duration: 4}} className="my-16 flex justify-center">
                 <span className="font-display-hero text-[120px] md:text-[180px] text-[#d4af37] drop-shadow-[0_0_50px_rgba(212,175,55,1)] leading-none block">
-                  YES.
+                  <MilestoneText color="#d4af37">YES.</MilestoneText>
                 </span>
               </motion.div>
             </div>
@@ -1268,7 +1270,7 @@ export const storyConfig = {
               </motion.span>
               
               <motion.div initial={{opacity:0, scale:0.9}} whileInView={{opacity:1, scale:1}} transition={{delay: 6, duration: 3}} className="mt-16 flex justify-center">
-                <span className="font-display-hero text-[80px] md:text-[120px] text-[#d4af37] drop-shadow-[0_0_40px_rgba(212,175,55,0.8)] tracking-[0.1em] block">AASHIK</span>
+                <span className="font-display-hero text-[80px] md:text-[120px] text-[#d4af37] drop-shadow-[0_0_40px_rgba(212,175,55,0.8)] tracking-[0.1em] block"><MilestoneText color="#d4af37">AASHIK</MilestoneText></span>
               </motion.div>
             </div>
           ) 
@@ -1358,20 +1360,524 @@ export const storyConfig = {
       id: "jupiter", 
       name: "Jupiter", 
       chapter: "04", 
-      title: "Our Memories", 
+      title: "The First Kiss", 
       color: "#e3bb76", 
       theme: "cream / orange / brown",
       positionX: -15,
-      size: 11.5,
+      size: 15.0,
       texture: "/textures/jupiter.jpg",
-      intro: "[CHAPTER INTRODUCTION WILL BE PROVIDED LATER]",
+      intro: (
+        <>
+          Welcome to Jupiter...
+          <br /><br />
+          <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 1, duration: 2}} className="block">
+            ...the planet where our love story truly began.
+          </motion.span>
+        </>
+      ),
       nextChapter: "mars",
+      nextChapterLabel: "TRAVEL TO MARS",
+      nextChapterSubtitle: "CHAPTER 05\nTHE DISTANCE",
       previousChapter: "saturn",
+      sections: [
+        { 
+          title: "28 DECEMBER 2022", 
+          content: (
+            <div className="py-24 text-center">
+              <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} transition={{duration: 2}} className="mb-12">
+                <span className="font-display-hero text-[48px] md:text-[80px] text-[#e3bb76] drop-shadow-[0_0_20px_rgba(227,187,118,0.4)] tracking-widest block">
+                  28 DECEMBER 2022
+                </span>
+              </motion.div>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 1.5, duration: 1.5}} className="block mb-24 font-label-mono tracking-[0.4em] text-[18px] opacity-80">
+                THE DAY WE GOT INTO OUR RELATIONSHIP.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 3, duration: 2}} className="block font-headline-lg-mobile text-[32px] text-primary">
+                Two days later...
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "30 DECEMBER 2022", 
+          content: (
+            <div className="py-24 text-center">
+              <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} transition={{duration: 2}} className="mb-12">
+                <span className="font-display-hero text-[48px] md:text-[80px] text-[#e3bb76] drop-shadow-[0_0_20px_rgba(227,187,118,0.4)] tracking-widest block">
+                  30 DECEMBER 2022
+                </span>
+              </motion.div>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 1.5, duration: 1.5}} className="block mb-16 text-[24px]">
+                Two days after that...
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 3, duration: 2}} className="block font-headline-lg-mobile text-[40px] text-tertiary-fixed">
+                You came to college.
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE BLUE KURTI", 
+          content: (
+            <div className="py-16">
+              <h2 className="font-headline-lg text-[32px] md:text-[48px] text-primary mb-24 text-center">I STILL REMEMBER WHAT YOU WERE WEARING.</h2>
+              
+              <div className="flex flex-col items-center justify-center space-y-16 mb-32">
+                <motion.span initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{delay: 1, duration: 1.5}} className="font-display-hero text-[48px] md:text-[72px] text-[#4b70dd] drop-shadow-[0_0_20px_rgba(75,112,221,0.5)]">
+                  A blue kurti.
+                </motion.span>
+                <motion.span initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{delay: 2.5, duration: 1.5}} className="font-display-hero text-[40px] md:text-[64px] text-[#d4af37] drop-shadow-[0_0_20px_rgba(212,175,55,0.5)]">
+                  Gold earrings.
+                </motion.span>
+                <motion.span initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{delay: 4, duration: 1.5}} className="font-display-hero text-[40px] md:text-[64px] text-primary">
+                  Open hair...
+                </motion.span>
+                <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 5.5, duration: 2}} className="text-[24px] opacity-80 italic">
+                  ...just flowing with the wind.
+                </motion.span>
+              </div>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 7, duration: 1.5}} className="block mb-12 text-center font-headline-lg-mobile text-[32px] text-primary">
+                And myyy goddddd...
+              </motion.span>
+              
+              <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} transition={{delay: 8.5, duration: 2}} className="text-center mb-16">
+                <span className="font-display-hero text-[56px] md:text-[80px] text-tertiary-fixed drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] block">
+                  You were stunning.
+                </span>
+              </motion.div>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 10.5, duration: 2}} className="block text-center text-[20px] md:text-[24px] opacity-90">
+                Words just couldn't describe how beautiful you looked that day to me.
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE DETAILS", 
+          content: (
+            <div className="py-16 text-center">
+              <div className="flex flex-col md:flex-row justify-center items-center gap-8 mb-24 font-label-mono tracking-widest text-[14px] md:text-[18px] opacity-80">
+                <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 0.5, duration: 1}}>BLUE KURTI</motion.span>
+                <span className="hidden md:inline">|</span>
+                <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 1, duration: 1}}>GOLD EARRINGS</motion.span>
+                <span className="hidden md:inline">|</span>
+                <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 1.5, duration: 1}}>OPEN HAIR</motion.span>
+              </div>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 2.5, duration: 1.5}} className="block mb-12 text-[24px]">
+                Those gold earrings were shining so bright in my eyes.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 4, duration: 1.5}} className="block mb-8 text-[28px] text-primary">
+                That god dammm blue kurti...
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 5.5, duration: 1.5}} className="block text-[20px] opacity-70 italic">
+                (Why did your mom have to give it awayyyyyy 😭😭😭)
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "MESMERIZING", 
+          content: (
+            <div className="py-32 text-center relative">
+              <div className="absolute inset-0 bg-[#e3bb76]/5 blur-3xl rounded-full z-[-1]" />
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 2}} className="block mb-16 font-display-hero text-[56px] md:text-[96px] text-primary drop-shadow-[0_0_30px_rgba(227,187,118,0.3)]">
+                <EmotionalText color="#e3bb76" className="text-[56px] md:text-[96px]">You were just mesmerizing.</EmotionalText>
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 2, duration: 2}} className="block font-headline-lg-mobile text-[32px] text-[#e3bb76]">
+                (You still areeeee.)
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "I COULDN'T LOOK AWAY", 
+          content: (
+            <div className="py-16 text-center md:text-left">
+              <h2 className="font-headline-lg text-[32px] md:text-[48px] text-primary mb-16 text-center">I COULDN'T TAKE MY EYES OFF YOU.</h2>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 1, duration: 1.5}} className="block mb-8 text-[24px]">
+                That day...
+              </motion.span>
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 2.5, duration: 1.5}} className="block mb-24 text-[28px] text-tertiary-fixed">
+                I just couldn't take my eyes off of you.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 4, duration: 1.5}} className="block mb-16 text-[24px]">
+                During lunch, I was just staring at you.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 5.5, duration: 1.5}} className="block mb-12 text-[24px]">
+                Wondering...
+              </motion.span>
+              
+              <div className="flex flex-col items-center gap-6 mb-16 font-display-hero text-[40px] md:text-[64px] text-primary opacity-80">
+                <motion.span initial={{opacity:0, scale:0.9}} whileInView={{opacity:1, scale:1}} transition={{delay: 7, duration: 1}}>Howww...</motion.span>
+                <motion.span initial={{opacity:0, scale:0.9}} whileInView={{opacity:1, scale:1}} transition={{delay: 8.5, duration: 1}}>Howww...</motion.span>
+                <motion.span initial={{opacity:0, scale:0.9}} whileInView={{opacity:1, scale:1}} transition={{delay: 10, duration: 1}}>Howwww...</motion.span>
+              </div>
+              
+              <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{delay: 11.5, duration: 2}} className="text-center mb-16">
+                <span className="block font-headline-lg-mobile text-[32px] md:text-[48px] text-tertiary-fixed">
+                  ...did this idiot get suchhhh a beautiful girl?
+                </span>
+              </motion.div>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 13.5, duration: 1.5}} className="block text-center text-[20px] opacity-70 italic">
+                (I still think the same.)
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "JUST THE TWO OF US", 
+          content: (
+            <div className="py-32 text-center">
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 2}} className="block mb-12 font-label-mono tracking-[0.4em] text-[20px] opacity-80">
+                AND THEN...
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 1.5, duration: 2}} className="block mb-24 font-headline-lg text-[40px] md:text-[56px] text-primary">
+                OUR CLASSES ENDED.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 3.5, duration: 2}} className="block mb-12 text-[28px]">
+                It was just the two of us...
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 5, duration: 2}} className="block mb-32 text-[28px] text-[#e3bb76]">
+                ...in the entire college.
+              </motion.span>
+              
+              <div className="flex flex-col items-center gap-8 font-headline-lg-mobile text-[32px] text-tertiary-fixed">
+                <motion.span initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} transition={{delay: 7, duration: 1.5}}>Two people.</motion.span>
+                <motion.span initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} transition={{delay: 8.5, duration: 1.5}}>One empty college.</motion.span>
+                <motion.span initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} transition={{delay: 10, duration: 1.5}}>One corner of a corridor.</motion.span>
+              </div>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE CORRIDOR", 
+          content: (
+            <div className="py-24 relative flex flex-col items-center">
+              <motion.div 
+                initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 4}}
+                className="w-full max-w-[300px] h-[400px] relative mb-24 flex items-center justify-center border-x border-[#e3bb76]/10"
+                style={{ background: 'linear-gradient(to top, transparent, rgba(227,187,118,0.02) 20%, rgba(227,187,118,0.05) 50%, rgba(227,187,118,0.02) 80%, transparent)' }}
+              >
+                <div className="absolute inset-0 bg-black/40 z-[-1]" />
+                <motion.div 
+                   animate={{ x: [-20, 0] }} transition={{ duration: 4, ease: "easeOut" }}
+                   className="w-2 h-2 rounded-full bg-[#e3bb76] shadow-[0_0_15px_#e3bb76] absolute left-[45%] top-[60%]"
+                />
+                <motion.div 
+                   animate={{ x: [20, 0] }} transition={{ duration: 4, ease: "easeOut" }}
+                   className="w-2 h-2 rounded-full bg-white shadow-[0_0_15px_white] absolute right-[45%] top-[60%]"
+                />
+              </motion.div>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 1, duration: 1.5}} className="block mb-8 text-[24px] text-center w-full">
+                We were standing there...
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 3, duration: 1.5}} className="block mb-24 text-[24px] text-center w-full opacity-80">
+                Just the two of us.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 5.5, duration: 2}} className="block font-headline-lg-mobile text-[32px] md:text-[48px] text-primary text-center w-full">
+                You pulled me closer.
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE HUG", 
+          content: (
+            <div className="py-16 text-center">
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 0.5, duration: 1.5}} className="block mb-8 text-[24px]">
+                At first...
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 2.5, duration: 2}} className="block mb-32 font-headline-lg-mobile text-[32px] text-tertiary-fixed">
+                I just hugged you.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 5.5, duration: 2}} className="block mb-16 text-[28px] text-primary">
+                You softly whispered...
+              </motion.span>
+              
+              <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} transition={{delay: 9, duration: 2}} className="my-24">
+                <span className="font-display-hero text-[80px] md:text-[140px] text-white drop-shadow-[0_0_40px_rgba(255,255,255,0.6)] leading-none block">
+                  "Kiss me."
+                </span>
+              </motion.div>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE SHOCK", 
+          content: (
+            <div className="py-24 text-center">
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 1.5}} className="block mb-16 font-headline-lg-mobile text-[32px] md:text-[48px] text-primary">
+                I was in shock.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 2, duration: 1.5}} className="block mb-16 text-[24px]">
+                I didn't understand what was happening for a second.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 4, duration: 2}} className="block mb-16 font-display-hero text-[40px] md:text-[64px] text-[#e3bb76]">
+                I was veryyy verryyy hesitant.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 6.5, duration: 1.5}} className="block text-[28px] opacity-80">
+                I initially refused to kiss.
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE REQUEST", 
+          content: (
+            <div className="py-16 text-center">
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 0.5, duration: 1.5}} className="block mb-12 text-[28px]">
+                But you asked me again.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 3, duration: 1.5}} className="block mb-24 text-[28px]">
+                And then again.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 5, duration: 1.5}} className="block mb-16 text-[24px] opacity-80">
+                After a couple more times...
+              </motion.span>
+              
+              <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{delay: 7, duration: 2}} className="mt-16">
+                <span className="font-display-hero text-[48px] md:text-[80px] text-tertiary-fixed drop-shadow-[0_0_20px_rgba(255,255,255,0.4)] block">
+                  You removed my mask.
+                </span>
+              </motion.div>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE HEARTBEAT", 
+          content: (
+            <div className="py-12">
+              <HeartbeatEffect 
+                intensity="low" 
+                text="my heart" 
+                showPulse={false}
+              />
+              <HeartbeatEffect 
+                intensity="medium" 
+                text="started to pound" 
+                showPulse={true}
+              />
+              <HeartbeatEffect 
+                intensity="high" 
+                text="faster..." 
+                showPulse={true}
+              />
+              <HeartbeatEffect 
+                intensity="high" 
+                text="and faster..." 
+                showPulse={true}
+              />
+            </div>
+          ) 
+        },
+        { 
+          title: "THE EYES", 
+          content: (
+            <div className="py-48 text-center relative">
+              <div className="absolute inset-0 bg-black/60 backdrop-blur-sm z-[-1] rounded-[3rem]" />
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 2}} className="block mb-24 font-headline-lg-mobile text-[32px] md:text-[48px] text-primary">
+                I was looking at those eyes of yours...
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 3, duration: 2}} className="block mb-32 text-[28px] md:text-[40px] text-tertiary-fixed">
+                ...waiting for me to kiss you.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 7, duration: 2}} className="block text-[32px] opacity-60 italic">
+                and then...
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE KISS", 
+          content: (
+            <div className="py-24 text-center">
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 1.5}} className="block mb-16 text-[28px]">
+                I went for it.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 2, duration: 1.5}} className="block mb-16 text-[28px]">
+                I leaned towards you...
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 4, duration: 1.5}} className="block mb-32 text-[28px]">
+                Our lips touched...
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 8, duration: 2}} className="block mb-16 font-label-mono tracking-[0.4em] text-[24px] opacity-80">
+                AND THEN...
+              </motion.span>
+              
+              <div className="relative w-full h-[500px] flex items-center justify-center my-24 overflow-visible">
+                 <HeartbeatEffect 
+                   intensity="climax" 
+                   text="WE KISSED."
+                   showPulse={true}
+                 />
+                 <motion.div 
+                   className="absolute inset-0 z-[-1]"
+                   initial={{opacity: 0, scale: 0.5}}
+                   whileInView={{opacity: [0, 0.5, 0], scale: [0.5, 1.5, 2]}}
+                   transition={{delay: 9, duration: 4, ease: "easeOut"}}
+                   style={{ background: 'radial-gradient(circle at center, rgba(227,187,118,0.4), transparent 60%)' }}
+                 />
+              </div>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE AFTERMATH", 
+          content: (
+            <div className="py-32 text-center">
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 2}} className="block mb-24 font-display-hero text-[56px] md:text-[96px] text-primary drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                OUR FIRST KISS.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 3, duration: 2}} className="block mb-16 font-headline-lg-mobile text-[32px] md:text-[40px] text-tertiary-fixed">
+                The most beautiful moment of my life.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 6, duration: 2}} className="block text-[24px] md:text-[28px] opacity-90">
+                Something we both can never ever forget in our lives.
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE LOVE STORY", 
+          content: (
+            <div className="py-24 text-center">
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 2}} className="block mb-8 font-headline-lg-mobile text-[32px] text-primary">
+                A SHORT STORY BY WORDS.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 2.5, duration: 2}} className="block mb-24 font-headline-lg-mobile text-[32px] text-tertiary-fixed">
+                ...but the biggest story by love.
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 5.5, duration: 2}} className="block mb-12 text-[28px]">
+                In the largest planet of the Solar System.
+              </motion.span>
+              
+              <motion.div initial={{opacity:0, scale:0.9}} whileInView={{opacity:1, scale:1}} transition={{delay: 8, duration: 3}} className="mt-16">
+                <span className="font-display-hero text-[80px] md:text-[140px] text-[#e3bb76] drop-shadow-[0_0_40px_rgba(227,187,118,0.5)] block">
+                  Jupiter.
+                </span>
+              </motion.div>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE NEXT CHAPTER", 
+          content: (
+            <div className="py-24">
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 1.5}} className="block mb-16 text-[28px] text-center">
+                I guess you know what comes next...
+              </motion.span>
+              
+              <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{delay: 3.5, duration: 2}} className="mb-24 text-center">
+                <span className="font-display-hero text-[64px] md:text-[96px] text-[#ff4d00] drop-shadow-[0_0_20px_rgba(255,77,0,0.5)] block">
+                  THE SPORTS DAY.
+                </span>
+              </motion.div>
+              
+              <div className="flex flex-col items-center gap-8 mb-24 text-[28px] font-headline-lg-mobile text-tertiary-fixed text-center">
+                <motion.span initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} transition={{delay: 6, duration: 1.5}}>Us.</motion.span>
+                <motion.span initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} transition={{delay: 7.5, duration: 1.5}}>Together.</motion.span>
+                <motion.span initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} transition={{delay: 9, duration: 1.5}}>In a relationship.</motion.span>
+                <motion.span initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} transition={{delay: 10.5, duration: 1.5}}>In college.</motion.span>
+                <motion.span initial={{opacity:0, y:10}} whileInView={{opacity:1, y:0}} transition={{delay: 12, duration: 2}} className="text-primary text-[32px] md:text-[40px] mt-8">The best moments of our lives.</motion.span>
+              </div>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 15, duration: 1.5}} className="block mb-8 text-[24px] text-center opacity-90">
+                The time when we were in love...
+              </motion.span>
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 16.5, duration: 2}} className="block mb-24 text-[24px] text-center opacity-90 text-[#e3bb76]">
+                ...and were also physically together.
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE END OF JUPITER", 
+          content: (
+            <div className="py-24 text-center">
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 1.5}} className="block mb-6 text-[24px]">Well...</motion.span>
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 1, duration: 1.5}} className="block mb-6 text-[24px]">There you have it.</motion.span>
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 2.5, duration: 1.5}} className="block mb-6 text-[24px]">A short story by words...</motion.span>
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 4, duration: 1.5}} className="block mb-16 text-[24px] text-tertiary-fixed">...but the biggest story by love.</motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 6.5, duration: 1.5}} className="block mb-16 font-display-hero text-[48px] md:text-[72px] text-primary">Our first kiss.</motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 8.5, duration: 1.5}} className="block mb-24 text-[28px] opacity-90">Something we both can never ever forget.</motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 11, duration: 2}} className="block mb-24 font-label-mono tracking-[0.4em] text-[18px] opacity-70">That was Jupiter.</motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 14, duration: 1.5}} className="block mb-8 text-[28px]">And now...</motion.span>
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 15.5, duration: 2}} className="block mb-24 font-headline-lg-mobile text-[32px] text-[#e3bb76]">...we move forward.</motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 18.5, duration: 1.5}} className="block mb-8 text-[24px]">Here we go.</motion.span>
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 20, duration: 2}} className="block mb-12 font-headline-lg-mobile text-[32px] text-[#ff4d00] drop-shadow-[0_0_15px_rgba(255,77,0,0.5)]">MARS IS THE NEXT DESTINATION.</motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 22.5, duration: 1.5}} className="block mb-8 text-[24px] text-primary">The Red Planet.</motion.span>
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 24, duration: 2}} className="block text-[24px] opacity-80 italic">Maybe it can represent the next phase of our relationship.</motion.span>
+            </div>
+          ) 
+        }
+      ],
+      timeline: [
+        { date: "28 DECEMBER 2022", title: "THE DAY WE GOT TOGETHER", description: "" },
+        { date: "30 DECEMBER 2022", title: "THE BLUE KURTI", description: "" },
+        { date: "", title: "GOLD EARRINGS", description: "" },
+        { date: "", title: "OPEN HAIR", description: "" },
+        { date: "", title: "I COULDN'T TAKE MY EYES OFF YOU", description: "" },
+        { date: "", title: "THE EMPTY COLLEGE", description: "" },
+        { date: "", title: "THE CORRIDOR", description: "" },
+        { date: "", title: "THE HUG", description: "" },
+        { date: "", title: '"KISS ME"', description: "" },
+        { date: "", title: "THE MASK", description: "" },
+        { date: "", title: "THE HEARTBEAT", description: "" },
+        { date: "", title: "THE EYES", description: "" },
+        { date: "", title: "THE MOMENT", description: "" },
+        { date: "", title: "THE FIRST KISS", description: "" },
+        { date: "", title: "THE MOST BEAUTIFUL MOMENT OF MY LIFE", description: "" },
+        { date: "", title: "JUPITER", description: "" }
+      ],
       memories: [
-        { url: "", date: "[MEMORY DATE]", title: "[MEMORY TITLE]", caption: "[MEMORY DESCRIPTION]" },
-        { url: "", date: "[MEMORY DATE]", title: "[MEMORY TITLE]", caption: "[MEMORY DESCRIPTION]" },
-        { url: "", date: "[MEMORY DATE]", title: "[MEMORY TITLE]", caption: "[MEMORY DESCRIPTION]" },
-        { url: "", date: "[MEMORY DATE]", title: "[MEMORY TITLE]", caption: "[MEMORY DESCRIPTION]" }
+        { url: "", date: "30 DECEMBER 2022", title: "That Day", caption: "[30 DECEMBER 2022 PHOTO]" },
+        { url: "", date: "DECEMBER 2022", title: "The Outfit", caption: "[BLUE KURTI MEMORY]" },
+        { url: "", date: "2022", title: "College Memories", caption: "[COLLEGE PHOTO]" },
+        { url: "", date: "EARLY 2023", title: "Sports Day (Teaser)", caption: "[SPORTS DAY PHOTO - OPTIONAL TEASER]" },
+        { url: "", date: "JANUARY 2023", title: "Us", caption: "[FIRST RELATIONSHIP PHOTO]" },
+        { url: "", date: "30 DECEMBER 2022", title: "The First Kiss", caption: "[FIRST KISS MEMORY PHOTO - IF AVAILABLE]" }
       ]
     },
     { 

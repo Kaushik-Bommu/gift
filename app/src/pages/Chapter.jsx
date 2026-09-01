@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router-dom';
 import { storyConfig } from '../data/story';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChapterTransition } from '../components/animations';
 
 import ChapterHero from '../components/chapter/ChapterHero';
 import ChapterNavigation from '../components/chapter/ChapterNavigation';
@@ -105,13 +106,13 @@ const Chapter = () => {
             
             {/* Fallback vertical list for mobile since spiral is hard to hover */}
             <div className="md:hidden mt-16 w-full space-y-8 relative">
-              <div className="absolute top-0 bottom-0 left-[15px] w-[2px] bg-gradient-to-b from-[#d4af37]/50 to-transparent" />
+              <motion.div initial={{ height: 0 }} whileInView={{ height: "100%" }} transition={{ duration: 3, ease: "easeOut" }} className="absolute top-0 left-[15px] w-[2px] bg-gradient-to-b from-[#d4af37]/50 to-transparent" />
               {planet.timeline.map((item, idx) => (
-                <div key={`tl-mob-${idx}`} className="relative pl-12">
+                <motion.div key={`tl-mob-${idx}`} initial={{ opacity: 0, x: -20, filter: "blur(4px)" }} whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }} transition={{ delay: idx * 0.2, duration: 1 }} viewport={{ once: true }} className="relative pl-12">
                   <div className="absolute left-[11px] top-1 w-2.5 h-2.5 rounded-full bg-[#d4af37] shadow-[0_0_8px_#d4af37]" />
                   {item.date && <span className="font-label-mono text-[10px] text-[#d4af37] opacity-80 block mb-1">{item.date}</span>}
                   <h4 className="font-headline-lg-mobile text-primary text-[16px] leading-tight">{item.title}</h4>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
@@ -119,7 +120,7 @@ const Chapter = () => {
       } else {
         blocks.push(
           <div key="timeline" className="flex flex-col items-center max-w-2xl mx-auto my-24 relative px-4">
-            <div className="absolute top-0 bottom-0 w-[1px] bg-outline-variant/30 left-1/2 -translate-x-1/2" />
+            <motion.div initial={{ height: 0 }} whileInView={{ height: "100%" }} transition={{ duration: 3, ease: "easeOut" }} className="absolute top-0 w-[1px] bg-outline-variant/30 left-1/2 -translate-x-1/2" />
             {planet.timeline.map((item, idx) => (
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -226,6 +227,7 @@ const Chapter = () => {
   };
 
   return (
+    <ChapterTransition>
     <main className="relative z-20 min-h-screen bg-[#020204] overflow-x-hidden selection:bg-tertiary-fixed/30 selection:text-primary">
       {/* Dynamic atmospheric background */}
       <div 
@@ -266,6 +268,7 @@ const Chapter = () => {
         isSun={isSun}
       />
     </main>
+    </ChapterTransition>
   );
 };
 
