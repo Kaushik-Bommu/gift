@@ -1884,26 +1884,244 @@ export const storyConfig = {
       id: "mars", 
       name: "Mars", 
       chapter: "05", 
-      title: "The Distance", 
-      color: "#ff4d00", 
+      title: "The Next Phase", 
+      color: "#c1440e", 
       theme: "deep red / burnt orange",
       positionX: 15,
       size: 4.5,
       texture: "/textures/mars.jpg",
-      intro: "[CHAPTER INTRODUCTION WILL BE PROVIDED LATER]",
+      intro: (
+        <>
+          <motion.div initial={{opacity:0, scale:0.95}} whileInView={{opacity:1, scale:1}} transition={{duration: 2.5}} className="mb-4">
+            <span className="font-display-hero text-[48px] md:text-[80px] text-[#c1440e] drop-shadow-[0_0_20px_rgba(193,68,14,0.3)]">MARS</span>
+          </motion.div>
+          <motion.div initial={{opacity:0, y:15}} whileInView={{opacity:1, y:0}} transition={{delay: 1.5, duration: 2}} className="mb-10">
+            <span className="font-headline-lg tracking-[0.2em] text-[#ff7a33] text-[20px] md:text-[28px]">THE NEXT PHASE</span>
+          </motion.div>
+          <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 3, duration: 2}} className="mb-16">
+            <span className="font-label-mono tracking-[0.3em] opacity-80 text-[14px] md:text-[16px]">31 DECEMBER 2022</span>
+          </motion.div>
+          <motion.div initial={{opacity:0, filter:'blur(4px)'}} whileInView={{opacity:1, filter:'blur(0px)'}} transition={{delay: 5, duration: 2}} className="text-[20px] md:text-[24px] font-light">
+            Can't believe we are already in Mars and it's still 2022...
+          </motion.div>
+        </>
+      ),
       nextChapter: "earth",
+      nextChapterLabel: "TRAVEL TO EARTH →",
       previousChapter: "jupiter",
-      distanceData: {
-        locationA: "[LOCATION]",
-        locationB: "[LOCATION]",
-        distance: "[DISTANCE]"
-      },
       sections: [
-        { title: "Calls and Messages", content: "[ADD STORY HERE]" },
-        { title: "Waiting", content: "[ADD STORY HERE]" },
-        { title: "Missed Moments", content: "[ADD STORY HERE]" },
-        { title: "Things That Kept Us Connected", content: "[ADD STORY HERE]" },
-        { title: "Hopeful Moments", content: "[ADD STORY HERE]" }
+        { 
+          title: "SPORTS DAY INTRODUCTION", 
+          content: (
+            <div className="py-12 relative">
+              <motion.div animate={{opacity: [0.1, 0.3, 0.1]}} transition={{repeat: Infinity, duration: 4}} className="absolute inset-0 bg-[#c1440e]/5 blur-[20px] pointer-events-none z-[-1]" />
+              31st December 2022, can't believe we are already in Mars and it's still 2022, there is 
+              <motion.span initial={{opacity:0, y: 10}} whileInView={{opacity:1, y: 0}} transition={{delay: 0.5}} className="inline-block mx-1">sooo</motion.span>
+              <motion.span initial={{opacity:0, y: 10}} whileInView={{opacity:1, y: 0}} transition={{delay: 0.8}} className="inline-block mx-1">much</motion.span>
+              <motion.span initial={{opacity:0, y: 10}} whileInView={{opacity:1, y: 0}} transition={{delay: 1.1}} className="inline-block mx-1">that happened...!!</motion.span>
+              <br /><br />
+              Anyhow, 
+              <motion.div initial={{opacity:0, x: -20, scale: 0.95}} whileInView={{opacity:1, x: 0, scale: 1}} transition={{type: 'spring', delay: 1.5, duration: 0.8}} className="my-8">
+                <span className="font-headline-lg-mobile text-[32px] text-[#ff7a33] drop-shadow-md">
+                  let's just jump right into sports day.
+                </span>
+              </motion.div>
+              Who would have thought that a junior college that concentrates on JEE and NEET, would take their students to play sports that too again the other branch of our college
+              <motion.span animate={{scale: [1, 1.2, 1]}} transition={{repeat: Infinity, duration: 1.5}} className="inline-block mx-1">🤯🤯</motion.span>
+              <br /><br />
+              I am not complaining at alllll, insanely happy that they did it.
+            </div>
+          ) 
+        },
+        { 
+          title: "JOURNEY TO THE GROUND", 
+          content: (
+            <div className="py-24 relative overflow-hidden">
+              <motion.div animate={{ x: [-100, typeof window !== 'undefined' ? window.innerWidth : 1000] }} transition={{ repeat: Infinity, duration: 12, ease: 'linear' }} className="absolute top-1/4 left-0 w-1 h-1 rounded-full bg-[#ffb380] opacity-40 blur-[1px] pointer-events-none" />
+              <motion.div animate={{ x: [-100, typeof window !== 'undefined' ? window.innerWidth : 1000] }} transition={{ repeat: Infinity, duration: 18, ease: 'linear', delay: 2 }} className="absolute top-1/2 left-0 w-2 h-2 rounded-full bg-[#ff7a33] opacity-30 blur-[2px] pointer-events-none" />
+              <motion.div animate={{ x: [-100, typeof window !== 'undefined' ? window.innerWidth : 1000] }} transition={{ repeat: Infinity, duration: 25, ease: 'linear', delay: 5 }} className="absolute top-3/4 left-0 w-3 h-3 rounded-full bg-[#c1440e] opacity-20 blur-[3px] pointer-events-none" />
+              
+              While going to the ground, I was sitting in the back with the boys and you were sitting with Arshi and all, we were playing songs on that speaker(
+              <motion.span initial={{opacity:0, filter:'blur(4px)'}} whileInView={{opacity:1, filter:'blur(0px)'}} transition={{duration:1}} className="inline-block text-[#ff7a33] mx-1">
+                do not remember who brought that tho
+                <motion.span animate={{y: [0, -5, 0]}} transition={{repeat: Infinity, duration: 1.5}} className="inline-block">😂</motion.span>
+              </motion.span>
+              ) and just vibing and enjoying...
+            </div>
+          ) 
+        },
+        { 
+          title: "ARRIVING AT THE GROUND", 
+          content: (
+            <div className="py-16 relative">
+              <motion.div animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.05, 1] }} transition={{ repeat: Infinity, duration: 2 }} className="absolute inset-0 bg-[#c1440e]/10 blur-[30px] pointer-events-none z-[-1]" />
+              <motion.span initial={{opacity:0, x: -10}} whileInView={{opacity:1, x: 0}} transition={{staggerChildren: 0.1}} className="block">
+                after reaching the ground we played all the different sports....
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE MOST IMPORTANT DETAIL", 
+          content: (
+            <div className="py-32 relative">
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 3}} className="block mb-16 text-[24px] opacity-80 font-light">
+                Before all that the most important detail...
+              </motion.span>
+              
+              <motion.div initial={{opacity:0, scale: 0.95}} whileInView={{opacity:1, scale: 1}} transition={{delay: 3.5, duration: 2}} className="my-16">
+                <span className="font-display-hero text-[40px] md:text-[64px] text-[#ff7a33] drop-shadow-[0_0_20px_rgba(255,122,51,0.4)] block leading-relaxed">
+                  you for your periods that day
+                </span>
+              </motion.div>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 6, duration: 1.5}} className="block mt-16 mb-4 text-[20px]">
+                and instead of staying at home and resting you 
+              </motion.span>
+              <motion.span initial={{opacity:0, scale: 0.9}} whileInView={{opacity:1, scale: 1}} transition={{delay: 7.5, duration: 1}} className="block font-headline-lg text-[48px] md:text-[72px] text-[#ff7a33] drop-shadow-lg mb-16">
+                Came!!
+              </motion.span>
+              
+              <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 9, duration: 2.5}} className="relative">
+                <motion.div animate={{opacity: [0.3, 0.7, 0.3], scale: [0.95, 1.05, 0.95]}} transition={{repeat: Infinity, duration: 4, ease: "easeInOut"}} className="absolute inset-0 bg-[#ff7a33]/15 blur-[40px] pointer-events-none" />
+                <span className="block text-[24px] md:text-[32px] leading-relaxed relative z-10 text-tertiary-fixed font-light">
+                  You came all the way to the ground in that immensely pain just just just toooo spend time with me..!!!!!
+                </span>
+              </motion.div>
+            </div>
+          ) 
+        },
+        { 
+          title: "PINK TOP / BLUE JEANS / BLUE CAP", 
+          content: (
+            <div className="py-24">
+              I still remember u were wearing a pink loose top and tight blue jeans with a blue cap(which u gave it to me and I left it in my village
+              <motion.span animate={{scale: [1, 1.1, 1]}} transition={{repeat: Infinity, duration: 2}} className="inline-block mx-1">🥲</motion.span>
+              ),
+              <br /><br />
+              <motion.div initial={{opacity:0, y:20, filter:'blur(8px)'}} whileInView={{opacity:1, y:0, filter:'blur(0px)'}} transition={{duration: 2}} className="mt-16 mb-16 text-center">
+                <span className="font-headline-lg-mobile text-[40px] md:text-[56px] text-[#ffb380] drop-shadow-[0_0_25px_rgba(255,179,128,0.5)] block">
+                  soooo sooo veryyy cuuutteeeee
+                  <motion.span animate={{scale: [1, 1.2, 1]}} transition={{repeat: Infinity, duration: 1.5}} className="inline-block mx-2">😍😍</motion.span>
+                </span>
+              </motion.div>
+            </div>
+          ) 
+        },
+        { 
+          title: "END OF SPORTS DAY", 
+          content: (
+            <div className="py-24">
+              <motion.div animate={{ opacity: [0.1, 0.3, 0.1] }} transition={{ repeat: Infinity, duration: 6 }} className="absolute inset-0 bg-[#c1440e]/5 blur-[20px] pointer-events-none z-[-1]" />
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:2}} className="block opacity-70 text-[20px]">
+                After the end of sports day, when we had to go back to college...
+              </motion.span>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE BUS RIDE", 
+          content: (
+            <div className="py-32 relative">
+              <motion.div animate={{ opacity: [0.2, 0.5, 0.2], x: [-10, 10, -10] }} transition={{ repeat: Infinity, duration: 10, ease: 'easeInOut' }} className="absolute inset-0 bg-[#ffd699]/5 blur-[50px] pointer-events-none z-[-1]" />
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration:2}} className="block leading-relaxed">
+                in the bus we both sat next to each other, my placing my hands on your thighs and us listening to our then favorite song, the song that we loved listening to, 
+              </motion.span>
+              
+              <motion.div initial={{opacity:0, scale: 0.9, filter: 'blur(10px)'}} whileInView={{opacity:1, scale: 1, filter: 'blur(0px)'}} transition={{delay: 2, duration: 3}} className="my-24 text-center">
+                <span className="font-display-hero text-[56px] md:text-[96px] text-[#ffd699] tracking-[0.1em] drop-shadow-[0_0_40px_rgba(255,214,153,0.6)]">
+                  'Golden Hour'
+                </span>
+                <motion.div animate={{opacity:[0.3, 0.6, 0.3], scale:[0.9, 1.1, 0.9]}} transition={{repeat:Infinity, duration:4}} className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[150%] h-[150%] bg-[#ffd699]/10 blur-[60px] pointer-events-none z-[-1]" />
+              </motion.div>
+              ....
+            </div>
+          ) 
+        },
+        { 
+          title: "THE PEACEFUL MOMENT", 
+          content: (
+            <div className="py-48 relative">
+              <motion.div animate={{ opacity: [0.1, 0.3, 0.1] }} transition={{ repeat: Infinity, duration: 15 }} className="absolute inset-0 bg-[#ffd699]/10 blur-[80px] pointer-events-none z-[-1]" />
+              
+              <span className="block mb-12 text-[20px] md:text-[24px]">That journey while coming back to college sitting next to you had to one of </span>
+              
+              <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 1, duration: 3}} className="my-16">
+                <span className="block font-headline-lg text-[32px] md:text-[56px] text-[#ffb380] leading-tight">
+                  the most peaceful moments of my life,
+                </span>
+              </motion.div>
+              
+              <span className="block my-12 text-[20px] md:text-[24px]">it was </span>
+              
+              <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 4, duration: 3}} className="my-16">
+                <span className="block font-headline-lg-mobile text-[28px] md:text-[48px] text-[#ffb380]/80">
+                  sooo calm soooo comfortable
+                </span>
+              </motion.div>
+              
+              <span className="block my-12 text-[20px] md:text-[24px]">that </span>
+              
+              <motion.div initial={{opacity:0, scale:1.05}} whileInView={{opacity:1, scale:1}} transition={{delay: 7, duration: 4}} className="my-24 relative text-center">
+                <motion.div animate={{scale: [1, 1.02, 1]}} transition={{repeat: Infinity, duration: 10}} className="absolute inset-0 bg-[#ffd699]/20 blur-[60px] pointer-events-none" />
+                <span className="block font-headline-lg text-[40px] md:text-[72px] text-[#ffd699] drop-shadow-[0_0_20px_rgba(255,214,153,0.5)] relative z-10">
+                  I wish I could stop time
+                </span>
+              </motion.div>
+              
+              <span className="block my-12 text-[20px] md:text-[24px]">and just live in that moment </span>
+              
+              <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 11, duration: 5}} className="mt-24 mb-32 text-center">
+                <span className="font-display-hero text-[32px] md:text-[64px] text-tertiary-fixed tracking-[0.2em] block leading-relaxed opacity-90">
+                  forever and ever and ever and everrr....
+                </span>
+              </motion.div>
+            </div>
+          ) 
+        },
+        { 
+          title: "CLOSING MARS", 
+          content: (
+            <div className="py-32 text-center">
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 3}} className="block mb-24 opacity-60 text-[20px]">
+                So that was it till 31st December 2022....
+              </motion.span>
+              
+              <motion.span initial={{opacity:0, y: 10}} whileInView={{opacity:1, y: 0}} transition={{delay: 3, duration: 2}} className="block mb-16 text-[24px] md:text-[32px] font-light">
+                Next up to the most lively parts of my deeksha life, the parts which involved us
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 5.5, duration: 2}} className="block mb-24 text-[20px] md:text-[24px] opacity-80">
+                and to read that u must travel to the most lively planet in the solar system....
+              </motion.span>
+              
+              <motion.div initial={{opacity:0, scale: 0.9, filter: 'blur(10px)'}} whileInView={{opacity:1, scale: 1, filter: 'blur(0px)'}} transition={{delay: 8, duration: 4}} className="mt-16">
+                <span className="font-display-hero text-[80px] md:text-[120px] text-[#2233ff] tracking-[0.2em] drop-shadow-[0_0_60px_rgba(34,51,255,0.8)]">
+                  EARTH!
+                </span>
+              </motion.div>
+            </div>
+          ) 
+        }
+      ],
+      timeline: [
+        { date: "31 DEC 2022", title: "SPORTS DAY", description: "" },
+        { date: "", title: "JOURNEY TO THE GROUND", description: "" },
+        { date: "", title: "PLAYING SPORTS", description: "" },
+        { date: "", title: "THE PINK TOP / BLUE CAP MEMORY", description: "" },
+        { date: "", title: "BUS RIDE", description: "" },
+        { date: "", title: "GOLDEN HOUR", description: "" },
+        { date: "", title: "THE PEACEFUL JOURNEY", description: "" },
+        { date: "", title: "EARTH", description: "" }
+      ],
+      memories: [
+        { url: "", date: "31 DEC 2022", title: "Sports Day", caption: "[SPORTS DAY PHOTO PLACEHOLDER]" },
+        { url: "", date: "31 DEC 2022", title: "Journey to the ground", caption: "[JOURNEY MEMORY PLACEHOLDER]" },
+        { url: "", date: "31 DEC 2022", title: "Pink top / blue cap memory", caption: "[OUTFIT MEMORY PLACEHOLDER]" },
+        { url: "", date: "31 DEC 2022", title: "Sports moments", caption: "[SPORTS MOMENTS PLACEHOLDER]" },
+        { url: "", date: "31 DEC 2022", title: "Bus ride", caption: "[BUS RIDE MEMORY PLACEHOLDER]" },
+        { url: "", date: "31 DEC 2022", title: "Golden Hour memory", caption: "[GOLDEN HOUR PLACEHOLDER]" }
       ]
     },
     { 
