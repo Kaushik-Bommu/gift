@@ -3,16 +3,33 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { useTexture, Stars, Sparkles } from '@react-three/drei';
 import * as THREE from 'three';
 
-const PlanetMesh = ({ textureUrl, color, size }) => {
+const PlanetMesh = ({ textureUrl, color, size, planetId }) => {
   const meshRef = useRef();
   const atmosphereRef = useRef();
   
   // Load texture only if provided
   const texture = textureUrl ? useTexture(textureUrl) : null;
 
+  const scrollY = useRef(0);
+  
+  React.useEffect(() => {
+    const handleScroll = () => { scrollY.current = window.scrollY; };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   useFrame((state, delta) => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += delta * 0.05;
+      let speed = 0.05;
+      if (planetId === 'earth') {
+         // slow down rotation as we scroll deeper, max scroll ~5000
+         const scrollFactor = Math.max(0.1, 1 - (scrollY.current / 4000));
+         speed = 0.05 * scrollFactor;
+      }
+      meshRef.current.rotation.y += delta * speed;
+      if (planetId === 'earth') {
+        meshRef.current.rotation.y += scrollY.current * 0.00001; // subtle parallax
+      }
     }
     if (atmosphereRef.current) {
       atmosphereRef.current.rotation.y -= delta * 0.03;
@@ -72,6 +89,7 @@ const ChapterBackgroundPlanet = ({ planet }) => {
              textureUrl={planet.texture} 
              color={planet.color} 
              size={planet.size * 1.2} 
+             planetId={planet.id}
            />
         </group>
       </Canvas>
