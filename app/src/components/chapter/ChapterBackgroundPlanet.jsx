@@ -98,7 +98,7 @@ const ChapterBackgroundPlanet = ({ planet }) => {
            <PlanetMesh 
              textureUrl={planet.texture} 
              color={planet.color} 
-             size={planet.size * 1.2} 
+             size={isVenus ? 18.0 : (planet.size * 1.2)} 
              planetId={planet.id}
            />
         </group>

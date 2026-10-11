@@ -2319,7 +2319,7 @@ export const storyConfig = {
       color: "#ff8c00", 
       theme: "amber / glowing gold / thick orange atmosphere",
       positionX: 60,
-      size: 16.0,
+      size: 5.5,
       texture: "/textures/venus.jpg",
       intro: (
         <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center pt-20">
