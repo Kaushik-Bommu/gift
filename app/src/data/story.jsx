@@ -2311,28 +2311,305 @@ export const storyConfig = {
         { date: "COLLEGE", title: "Heels / drive-in memory", description: "" },
         { date: "ALWAYS", title: "All the other memories", description: "" }
       ]
-    },
-    { 
+    },    { 
       id: "venus", 
       name: "Venus", 
       chapter: "07", 
-      title: "All The Little Things", 
-      color: "#ffcc33", 
-      theme: "warm gold / peach / soft orange",
+      title: "THE HOTTEST MEMORIES", 
+      color: "#ff8c00", 
+      theme: "amber / glowing gold / thick orange atmosphere",
       positionX: 60,
-      size: 5.5,
+      size: 16.0,
       texture: "/textures/venus.jpg",
-      intro: "[CHAPTER INTRODUCTION WILL BE PROVIDED LATER]",
+      intro: (
+        <div className="relative z-10 w-full min-h-screen flex flex-col items-center justify-center pt-20">
+          <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 2}} className="w-full max-w-4xl mx-auto flex flex-col items-center justify-center mb-48 relative">
+            <motion.div animate={{ opacity: [0.2, 0.5, 0.2], scale: [1, 1.02, 1] }} transition={{ repeat: Infinity, duration: 2.5 }} className="absolute inset-0 bg-[#ff1111]/20 blur-[60px] pointer-events-none rounded-full" />
+            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#ff1111]/60 to-transparent mb-12"></div>
+            
+            <motion.span initial={{opacity:0, scale: 0.95}} whileInView={{opacity:1, scale: 1}} transition={{delay: 1, duration: 0.5}} className="font-label-mono text-[#ff3333] text-[24px] md:text-[32px] tracking-[0.3em] mb-16 drop-shadow-[0_0_20px_rgba(255,51,51,0.9)] text-center">
+              ⚠ WARNING! WARNING! WARNING! ⚠
+            </motion.span>
+            
+            <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 3, duration: 1.5}} className="font-headline-lg-mobile text-[#ff6666] text-[24px] md:text-[36px] text-center mb-16 max-w-2xl leading-relaxed drop-shadow-[0_0_10px_rgba(255,102,102,0.5)]">
+              DO NOT, I REPEAT DO NOT LET ANYONE SEE THE CONTENTS OF THIS PLANET
+            </motion.span>
+            
+            <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 6, duration: 2}} className="font-body-main font-light text-[20px] md:text-[24px] text-center opacity-80 italic text-[#ffcccc]">
+              Now that it is only you and me, let us continue.....
+            </motion.span>
+            
+            <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-[#ff1111]/60 to-transparent mt-16"></div>
+            
+            {/* tiny scan-line effect */}
+            <motion.div animate={{ y: ["-100%", "100%"] }} transition={{ repeat: Infinity, duration: 4, ease: "linear" }} className="absolute inset-0 bg-gradient-to-b from-transparent via-[#ff1111]/10 to-transparent h-[15px] pointer-events-none" />
+          </motion.div>
+
+          <div className="py-24 flex flex-col items-center relative w-full">
+            <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 2}} className="text-[24px] md:text-[32px] text-center max-w-3xl leading-relaxed text-[#ffcc88]">
+              The hottestttt planet in the solar system, 
+            </motion.span>
+            
+            <motion.div initial={{opacity:0, scale:0.9, filter: 'blur(15px)'}} whileInView={{opacity:1, scale:1, filter: 'blur(0px)'}} transition={{delay: 1.5, duration: 3}} className="my-16 w-full flex justify-center relative">
+               <motion.div animate={{ opacity: [0.4, 0.8, 0.4], scale: [0.95, 1.05, 0.95] }} transition={{ repeat: Infinity, duration: 4 }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[150%] bg-[#ff8c00]/20 blur-[80px] pointer-events-none z-[-1]" />
+              <span className="font-display-hero text-[100px] md:text-[180px] text-[#ff8c00] drop-shadow-[0_0_60px_rgba(255,140,0,0.8)] block text-center tracking-widest">
+                VENUS
+              </span>
+            </motion.div>
+            
+            <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 3.5, duration: 2}} className="text-[24px] md:text-[32px] text-center max-w-4xl leading-relaxed text-[#ffcc88]">
+              and it is only right that our hottest memories must be stored in this planet 
+              <motion.span animate={{scale: [1, 1.2, 1]}} transition={{repeat: Infinity, duration: 2}} className="inline-block ml-4 text-[32px] drop-shadow-[0_0_15px_rgba(255,204,136,0.8)]">😏</motion.span>
+            </motion.span>
+          </div>
+        </div>
+      ),
       nextChapter: "mercury",
       previousChapter: "earth",
-      floatingTexts: [
-        { title: "[ADD QUOTE HERE]", description: "[ADD DESCRIPTION HERE]" },
-        { title: "[ADD QUOTE HERE]", description: "[ADD DESCRIPTION HERE]" },
-        { title: "[ADD QUOTE HERE]", description: "[ADD DESCRIPTION HERE]" },
-        { title: "[ADD QUOTE HERE]", description: "[ADD DESCRIPTION HERE]" },
-        { title: "[ADD QUOTE HERE]", description: "[ADD DESCRIPTION HERE]" }
+      sections: [
+        { 
+          title: "THE SECRET SPOT", 
+          content: (
+            <div className="py-32 relative">
+              <motion.div animate={{ opacity: [0.1, 0.3, 0.1], x: [-20, 20, -20] }} transition={{ repeat: Infinity, duration: 8, ease: 'easeInOut' }} className="absolute inset-0 bg-[#ff8c00]/10 blur-[60px] pointer-events-none z-[-1]" />
+              
+              <h2 className="font-headline-lg text-[40px] md:text-[56px] text-[#ffcc88] mb-12">THE SECRET SPOT</h2>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 2}} className="block mb-12 text-[20px] md:text-[24px] leading-relaxed">
+                Almost every day in college, we would sneak away to...
+              </motion.span>
+              
+              <motion.div initial={{opacity:0, x:-20}} whileInView={{opacity:1, x:0}} transition={{delay: 1.5, duration: 2}} className="my-16 p-8 border-l-2 border-[#ff8c00]/40 bg-[#ff8c00]/5">
+                <span className="block font-headline-lg-mobile text-[28px] md:text-[40px] text-[#ffaa44] mb-8">
+                  that oneeeeeee spottttt at the edge of the corridor
+                </span>
+                <span className="block font-body-main text-[20px] md:text-[26px] opacity-80 mb-8">
+                  the blind spot where the cctv cameras couldn't catch us
+                </span>
+                <span className="block font-headline-lg-mobile text-[32px] md:text-[48px] text-[#ffcc88] drop-shadow-[0_0_15px_rgba(255,204,136,0.4)]">
+                  the one spot where we could do whatever we wanted.....
+                </span>
+              </motion.div>
+              
+              <div className="mt-24 h-64 w-full relative flex items-center justify-center overflow-hidden rounded-2xl border border-[#ff8c00]/20 bg-black/40">
+                <div className="absolute left-0 w-1/3 h-full bg-black z-10 blur-xl"></div>
+                <div className="absolute right-0 top-10 w-4 h-4 rounded-full bg-red-600/20 blur-sm flex items-center justify-center">
+                   <motion.div animate={{ opacity: [0.2, 1, 0.2] }} transition={{ repeat: Infinity, duration: 2 }} className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_10px_red]" />
+                </div>
+                <motion.div animate={{ x: [0, 40] }} transition={{ duration: 10, ease: "linear" }} className="w-full h-full">
+                  <div className="absolute right-[-20%] w-[150%] h-full bg-gradient-to-l from-[#ff8c00]/20 to-transparent transform -skew-x-12 z-0"></div>
+                </motion.div>
+                <span className="relative z-20 font-label-mono text-[#ffaa44] tracking-[0.4em] opacity-50">OUR SECRET PLACE</span>
+              </div>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE SWEATSHIRT MEMORY", 
+          content: (
+            <div className="py-32 text-center relative">
+              <motion.div animate={{ opacity: [0.1, 0.4, 0.1] }} transition={{ repeat: Infinity, duration: 6 }} className="absolute inset-0 bg-[#ffd700]/5 blur-[80px] pointer-events-none z-[-1]" />
+              
+              <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{duration: 2}} className="inline-block p-12 border border-[#ffd700]/20 bg-[#ffd700]/5 rounded-3xl backdrop-blur-md shadow-[0_0_40px_rgba(255,215,0,0.1)]">
+                <span className="block font-headline-lg text-[32px] md:text-[48px] text-[#ffdd44] mb-8">
+                  that yellow - grey sweatshirt and ig blue jeans
+                </span>
+                
+                <motion.div initial={{opacity:0, scale: 0.9}} whileInView={{opacity:1, scale: 1}} transition={{delay: 1.5, duration: 2}} className="mt-16">
+                  <span className="block font-display-hero text-[48px] md:text-[80px] text-[#ffaa00] drop-shadow-[0_0_30px_rgba(255,170,0,0.6)]">
+                    that day was wayyyyy wayyyyy tooooooo hotttt..
+                  </span>
+                </motion.div>
+              </motion.div>
+            </div>
+          ) 
+        },
+        { 
+          title: "FIRST TIME AT HOME", 
+          content: (
+            <div className="py-32">
+              <h2 className="font-headline-lg text-[40px] md:text-[56px] text-[#ffcc88] mb-16">FIRST TIME AT HOME</h2>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 1.5}} className="block mb-8 text-[20px] md:text-[24px]">
+                Coming to the first time u ever came to my house...
+              </motion.span>
+              
+              <div className="pl-8 border-l-2 border-[#ff8c00]/30 space-y-12 my-16 py-8">
+                <motion.div initial={{opacity:0, x:-20}} whileInView={{opacity:1, x:0}} transition={{delay: 1, duration: 1.5}}>
+                  <span className="block text-[20px] md:text-[24px] opacity-90">I had stayed home instead of going to college.</span>
+                  <span className="block text-[20px] md:text-[24px] opacity-90">You went to college, but then decided to come to my home.</span>
+                </motion.div>
+                
+                <motion.div initial={{opacity:0, x:-20}} whileInView={{opacity:1, x:0}} transition={{delay: 2.5, duration: 1.5}}>
+                  <span className="block text-[#ffaa44] text-[20px] md:text-[24px]">Chaitanya dropping you on his bike...</span>
+                  <span className="block text-[#ffaa44] text-[20px] md:text-[24px]">arriving near the gate...</span>
+                </motion.div>
+                
+                <motion.div initial={{opacity:0, x:-20}} whileInView={{opacity:1, x:0}} transition={{delay: 4, duration: 1.5}}>
+                  <span className="block text-[20px] md:text-[24px] opacity-90">The whole bakery excuse for the security guard 😂</span>
+                </motion.div>
+                
+                <motion.div initial={{opacity:0, x:-20}} whileInView={{opacity:1, x:0}} transition={{delay: 5.5, duration: 1.5}}>
+                  <span className="block font-headline-lg-mobile text-[28px] md:text-[36px] text-[#ffcc88] mt-8">
+                    You wearing that pink T-shirt and black shorts.
+                  </span>
+                </motion.div>
+              </div>
+
+              <div className="mt-32">
+                <HeartbeatEffect intensity="high" text="my heart was beating wayyyy tooo quick" />
+              </div>
+            </div>
+          ) 
+        },
+        { 
+          title: "WEARING MY CLOTHES", 
+          content: (
+            <div className="py-32 text-center relative">
+              <h2 className="font-headline-lg text-[40px] md:text-[56px] text-[#ffcc88] mb-24">WEARING MY CLOTHES</h2>
+              
+              <div className="flex flex-col md:flex-row justify-center items-center gap-12 md:gap-24 my-24">
+                <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{delay: 0.5, duration: 1.5}} className="flex flex-col items-center">
+                  <div className="w-32 h-40 rounded-t-3xl rounded-b-xl border border-[#ff66b2]/30 bg-[#ff66b2]/10 mb-6 flex items-center justify-center shadow-[0_0_20px_rgba(255,102,178,0.2)]">
+                    <span className="font-label-mono text-[#ff66b2] text-[12px] opacity-50">PINK T-SHIRT</span>
+                  </div>
+                  <span className="font-headline-lg-mobile text-[20px] text-[#ff99cc]">PINK T-SHIRT</span>
+                </motion.div>
+                
+                <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{delay: 1.5, duration: 1.5}} className="flex flex-col items-center mt-12 md:mt-0">
+                  <div className="w-32 h-40 rounded-t-3xl rounded-b-xl border border-[#ff3333]/30 bg-[#ff3333]/10 mb-6 flex items-center justify-center shadow-[0_0_20px_rgba(255,51,51,0.2)]">
+                    <span className="font-label-mono text-[#ff3333] text-[12px] opacity-50">RED SHIRT</span>
+                  </div>
+                  <span className="font-headline-lg-mobile text-[20px] text-[#ff6666]">RED SHIRT</span>
+                </motion.div>
+                
+                <motion.div initial={{opacity:0, scale: 0.9}} whileInView={{opacity:1, scale: 1}} transition={{delay: 3, duration: 2}} className="flex flex-col items-center mt-12 md:mt-0 relative">
+                  <motion.div animate={{ opacity: [0.2, 0.6, 0.2] }} transition={{ repeat: Infinity, duration: 3 }} className="absolute inset-0 bg-[#ffefcc]/20 blur-xl rounded-full" />
+                  <div className="w-40 h-48 rounded-t-3xl rounded-b-xl border border-[#ffefcc]/50 bg-[#ffefcc]/10 mb-6 flex items-center justify-center shadow-[0_0_30px_rgba(255,239,204,0.4)] relative z-10">
+                    <span className="font-label-mono text-[#ffefcc] text-[12px] opacity-70 text-center px-4">OFF-WHITE<br/>SOLO LEVELING<br/>T-SHIRT</span>
+                  </div>
+                  <span className="font-headline-lg-mobile text-[24px] text-[#ffefcc] drop-shadow-[0_0_10px_rgba(255,239,204,0.6)]">SOLO LEVELING</span>
+                </motion.div>
+              </div>
+              
+              <motion.div initial={{opacity:0, filter: 'blur(10px)'}} whileInView={{opacity:1, filter: 'blur(0px)'}} transition={{delay: 5, duration: 3}} className="mt-32">
+                <span className="font-display-hero text-[48px] md:text-[80px] text-[#ffcc88] tracking-[0.1em] drop-shadow-[0_0_40px_rgba(255,204,136,0.8)] block">
+                  that is just my dreammm
+                </span>
+              </motion.div>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE PRINCESS LIFT", 
+          content: (
+            <div className="py-32 relative text-center">
+              <motion.div animate={{ opacity: [0.1, 0.3, 0.1], y: [-10, 10, -10] }} transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }} className="absolute inset-0 bg-[#ffb347]/10 blur-[60px] pointer-events-none z-[-1]" />
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 2}} className="block mb-16 text-[20px] md:text-[24px] opacity-90">
+                Whenever you came to my house...
+              </motion.span>
+              
+              <motion.div initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{delay: 1.5, duration: 2}} className="relative inline-block w-full max-w-2xl mx-auto py-16">
+                 {/* Abstract representation of princess lift */}
+                 <div className="relative h-48 w-full flex justify-center items-center opacity-80">
+                    <motion.div animate={{ y: [-5, 5, -5] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }} className="w-16 h-40 bg-gradient-to-t from-[#ffb347]/40 to-transparent rounded-full absolute left-[45%] blur-sm"></motion.div>
+                    <motion.div animate={{ y: [-10, 0, -10], x: [5, 10, 5], rotate: [5, 15, 5] }} transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }} className="w-12 h-32 bg-gradient-to-t from-[#ffcc88]/60 to-transparent rounded-full absolute left-[55%] top-[10%] blur-[2px] shadow-[0_0_30px_rgba(255,204,136,0.6)]"></motion.div>
+                 </div>
+                 
+                 <span className="block mt-12 font-headline-lg text-[40px] md:text-[64px] text-[#ffcc88] drop-shadow-[0_0_20px_rgba(255,204,136,0.5)]">
+                    Me lifting you as my princess
+                 </span>
+              </motion.div>
+            </div>
+          ) 
+        },
+        { 
+          title: "THE FUTURE WE WANT", 
+          content: (
+            <div className="py-48 relative">
+              {/* Transition to hopeful atmosphere */}
+              <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 5}} className="absolute inset-0 bg-gradient-to-t from-[#fff3e0]/10 to-transparent blur-[80px] pointer-events-none z-[-1]" />
+              
+              <h2 className="font-headline-lg text-[40px] md:text-[56px] text-[#ffdf80] mb-16 text-center">THE FUTURE WE WANT</h2>
+              
+              <div className="max-w-4xl mx-auto space-y-16 text-center text-[22px] md:text-[28px] leading-relaxed text-[#ffdf80]">
+                <motion.span initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{delay: 1, duration: 2}} className="block">
+                  soon veryyy sooon after us informing about our relationship in our families and them accepting us
+                </motion.span>
+                
+                <motion.span initial={{opacity:0, y:20}} whileInView={{opacity:1, y:0}} transition={{delay: 3, duration: 2}} className="block">
+                  we would never have to lie
+                </motion.span>
+                
+                <motion.div initial={{opacity:0, scale: 0.95}} whileInView={{opacity:1, scale: 1}} transition={{delay: 5, duration: 3}} className="pt-12">
+                  <span className="block font-display-hero text-[48px] md:text-[80px] text-[#ffffff] drop-shadow-[0_0_40px_rgba(255,255,255,0.7)] tracking-wide">
+                    can easily meet whenever we want
+                  </span>
+                </motion.div>
+              </div>
+            </div>
+          ) 
+        },
+        { 
+          title: "ENDING", 
+          content: (
+            <div className="py-32 text-center relative">
+              <motion.div animate={{ opacity: [0.2, 0.5, 0.2] }} transition={{ repeat: Infinity, duration: 3 }} className="absolute inset-0 bg-[#ff3300]/10 blur-[80px] pointer-events-none z-[-1]" />
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 2}} className="block mb-12 text-[20px] md:text-[26px] opacity-90 max-w-3xl mx-auto leading-relaxed">
+                That is it for the hottest planet I have only covered a <motion.span animate={{ scale: [1, 0.8, 1], opacity: [1, 0.5, 1] }} transition={{ repeat: Infinity, duration: 1.5 }} className="inline-block text-[#ff8800] px-2 text-[16px]">tiny droplet</motion.span> of our red hot lava
+              </motion.span>
+              
+              <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 2, duration: 2}} className="block mb-16 text-[22px] md:text-[28px] max-w-4xl mx-auto leading-relaxed">
+                and there will be <motion.span animate={{ color: ["#ff6600", "#ff0000", "#ff6600"] }} transition={{ repeat: Infinity, duration: 2 }} className="font-bold">more and moree volcanic eruption</motion.span> that will happen in the coming future
+              </motion.span>
+              
+              <motion.div initial={{opacity:0, scale: 0.9}} whileInView={{opacity:1, scale: 1}} transition={{delay: 4.5, duration: 3}} className="mt-16">
+                <span className="block font-display-hero text-[40px] md:text-[64px] text-[#ff3300] drop-shadow-[0_0_30px_rgba(255,51,0,0.8)]">
+                  and we need to ready to make more and more red hot memories 😅
+                </span>
+              </motion.div>
+            </div>
+          ) 
+        },
+        { 
+          title: "FAREWELL TO VENUS", 
+          content: (
+            <div className="py-48 text-center relative h-[80vh] flex flex-col justify-center items-center">
+              <motion.div initial={{opacity:0}} whileInView={{opacity:1}} transition={{duration: 8}} className="absolute inset-0 bg-black/60 pointer-events-none z-0" />
+              
+              <div className="relative z-10 w-full max-w-4xl">
+                <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 2, duration: 3}} className="block mb-16 font-body-main text-[24px] md:text-[32px] text-white/70 leading-relaxed italic">
+                  Finally the next destination happens to be the first planet in the solar system but also the farewell....
+                </motion.span>
+                
+                <motion.span initial={{opacity:0}} whileInView={{opacity:1}} transition={{delay: 6, duration: 4}} className="block font-headline-lg-mobile text-[32px] md:text-[48px] text-white/90 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]">
+                  Travel acrooooosss to mercury to find it out....!!!
+                </motion.span>
+              </div>
+            </div>
+          ) 
+        }
+      ],
+      timeline: [
+        { date: "COLLEGE", title: "SECRET COLLEGE SPOT", description: "The blind spot" },
+        { date: "COLLEGE", title: "YELLOW-GREY SWEATSHIRT MEMORY", description: "Wayyyyy wayyyyy tooooooo hotttt" },
+        { date: "HOME", title: "FIRST VISIT TO HOME", description: "Heart beating wayyyy tooo quick" },
+        { date: "HOME", title: "PRIVATE MEMORIES", description: "" },
+        { date: "HOME", title: "WEARING MY CLOTHES", description: "Pink, Red, Solo Leveling" },
+        { date: "HOME", title: "PRINCESS MEMORY", description: "My princess" },
+        { date: "FUTURE", title: "THE FUTURE WE WANT", description: "We would never have to lie" },
+        { date: "FUTURE", title: "MORE MEMORIES TO COME", description: "Red hot memories 😅" }
+      ],
+      memories: [
+        { url: "", date: "COLLEGE", title: "The Secret Spot", caption: "[CORRIDOR MEMORY PLACEHOLDER]" },
+        { url: "", date: "COLLEGE", title: "Sweatshirt Memory", caption: "[SWEATSHIRT PHOTO PLACEHOLDER]" },
+        { url: "", date: "HOME", title: "First Visit", caption: "[PINK T-SHIRT MEMORY PLACEHOLDER]" },
+        { url: "", date: "HOME", title: "Wearing My Clothes", caption: "[SOLO LEVELING MEMORY PLACEHOLDER]" }
       ]
     },
+
     { 
       id: "mercury", 
       name: "Mercury", 

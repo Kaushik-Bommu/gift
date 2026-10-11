@@ -2,6 +2,24 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const ChapterHero = ({ chapterNumber, planetName, title, color, intro }) => {
+  if (planetName.toLowerCase() === 'venus') {
+    return (
+      <header className="relative w-full min-h-screen flex flex-col items-center justify-start text-center px-4 overflow-hidden pt-[10vh]">
+        {/* Dynamic atmospheric glow based on planet color */}
+        <div 
+          className="absolute top-0 left-0 right-0 h-full opacity-30 pointer-events-none"
+          style={{
+            background: `radial-gradient(circle at top, ${color}40, transparent 70%)`
+          }}
+        />
+        
+        <div className="z-10 w-full">
+          {intro}
+        </div>
+      </header>
+    );
+  }
+
   return (
     <header className="relative w-full min-h-[90vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
       {/* Dynamic atmospheric glow based on planet color */}

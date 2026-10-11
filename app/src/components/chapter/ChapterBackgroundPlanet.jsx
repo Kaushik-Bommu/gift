@@ -66,22 +66,32 @@ const PlanetMesh = ({ textureUrl, color, size, planetId }) => {
 };
 
 const ChapterBackgroundPlanet = ({ planet }) => {
+  const isVenus = planet.id === 'venus';
+  
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-60">
       <Canvas camera={{ position: [0, 0, 30], fov: 45 }}>
         <fog attach="fog" args={['#020204', 20, 60]} />
         
-        <ambientLight intensity={0.05} color={planet.color} />
+        <ambientLight intensity={isVenus ? 0.2 : 0.05} color={planet.color} />
         {/* Cinematic rim light */}
-        <directionalLight position={[15, 5, -10]} intensity={2.0} color={planet.color} />
+        <directionalLight position={[15, 5, -10]} intensity={isVenus ? 3.0 : 2.0} color={planet.color} />
         {/* Soft fill light */}
-        <directionalLight position={[-10, -5, 10]} intensity={0.1} color="#ffffff" />
+        <directionalLight position={[-10, -5, 10]} intensity={isVenus ? 0.3 : 0.1} color={isVenus ? "#ff8c00" : "#ffffff"} />
         
         {/* Distant stars */}
-        <Stars radius={50} depth={50} count={3000} factor={4} saturation={0} fade speed={1} />
+        <Stars radius={50} depth={50} count={isVenus ? 1000 : 3000} factor={4} saturation={0} fade speed={1} />
         
-        {/* Cosmic dust particles */}
-        <Sparkles count={200} scale={40} size={1.5} speed={0.2} opacity={0.2} color={planet.color} />
+        {/* Cosmic dust particles / Venus atmosphere */}
+        {isVenus ? (
+          <>
+            <Sparkles count={400} scale={50} size={2.5} speed={0.4} opacity={0.3} color="#ffcc33" />
+            <Sparkles count={150} scale={40} size={4} speed={0.8} opacity={0.5} color="#ff3300" />
+            <Sparkles count={200} scale={45} size={1.5} speed={0.2} opacity={0.4} color="#ff8c00" />
+          </>
+        ) : (
+          <Sparkles count={200} scale={40} size={1.5} speed={0.2} opacity={0.2} color={planet.color} />
+        )}
 
         {/* Position the planet to the right side of the screen */}
         <group position={[12, 0, -10]}>
@@ -96,8 +106,8 @@ const ChapterBackgroundPlanet = ({ planet }) => {
       
       {/* HTML Gradients for deeper atmosphere */}
       <div 
-        className="absolute inset-0 mix-blend-screen"
-        style={{ background: `radial-gradient(circle at 80% 50%, ${planet.color}20, transparent 60%)` }}
+        className="absolute inset-0 mix-blend-screen transition-opacity duration-1000"
+        style={{ background: `radial-gradient(circle at 80% 50%, ${planet.color}${isVenus ? '40' : '20'}, transparent ${isVenus ? '70%' : '60%'})` }}
       />
       <div 
         className="absolute inset-0"
